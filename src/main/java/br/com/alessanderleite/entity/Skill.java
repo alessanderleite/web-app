@@ -18,7 +18,6 @@ public class Skill {
 	@Column
 	private String skillName;
 	
-	@Column
 	@ManyToOne
 	private User user;
 
