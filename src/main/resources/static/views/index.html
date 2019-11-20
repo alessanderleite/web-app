@@ -2,9 +2,38 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Main Page</title>
+<link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
-	<h1>Hello World!</h1>
+<body ng-app="demo">
+	<hr/>
+	<div class="container" ng-controller="UserController">
+
+	    <div class="row">
+	        <label>User</label> <input type="text" ng-model="userDto.userName" class="input-sm spacing"/>
+	        <label>Skills</label> <input type="text" ng-model="skills" ng-list class="input-sm custom-width spacing" placeholder="use comma to separate skills"/>
+	        <button ng-click="saveUser()" class="btn btn-sm btn-info">Save User</button>
+	    </div>
+
+	    <hr/>
+	
+	    <div class="row">
+	        <p>{{allUsers | json}}</p>
+	    </div>
+	
+	    <hr/>
+	
+	    <div class="row" ng-repeat="user in allUsers">
+	        <div class="">
+	            <h3>{{user.userName}}</h3>
+	            <span ng-repeat="skill in user.skillDtos" class="spacing">{{skill.skillName}}</span>
+	        </div>
+	    </div>
+	
+	</div>
+
+	<script type="text/javascript" src="webjars/angularjs/1.7.8/angular.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="webjars/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 </body>
 </html>
