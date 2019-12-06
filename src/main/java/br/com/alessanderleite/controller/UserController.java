@@ -30,5 +30,6 @@ public class UserController {
 	
 	@RequestMapping(value = Constants.SAVE_USER, method = RequestMethod.POST)
 	public void saveUser(@RequestBody UserDto userDto) {
+		userService.saveUser(userDto);
 	}
 }
