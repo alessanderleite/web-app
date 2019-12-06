@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import br.com.alessanderleite.dto.UserDto;
 import br.com.alessanderleite.service.UserService;
 import br.com.alessanderleite.utils.Constants;
 
 @RequestMapping("/user")
+@RestController
 public class UserController {
 
 	@Autowired
